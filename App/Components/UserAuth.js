@@ -1,6 +1,6 @@
 import React from 'react';
 import { Text, View, TouchableOpacity, TextInput } from 'react-native';
-import { auth, database } from '../config/config';
+import { auth, database } from '../../config/config';
 
 const UserAuth = (props) => {
     const [authStep, setAuthStep] = React.useState(0);

@@ -1,6 +1,6 @@
 import React from 'react';
 import { FlatList, Text, View, TouchableOpacity, TextInput, KeyboardAvoidingView } from 'react-native';
-import { f, auth, database } from '../config/config';
+import { f, auth, database } from '../../config/config';
 import UserAuth from '../Components/UserAuth';
 import { timeConverter } from '../Utils/TimeUtils';
 import { uniqueId } from '../Utils/IdUtils';

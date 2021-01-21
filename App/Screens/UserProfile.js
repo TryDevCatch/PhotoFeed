@@ -1,6 +1,6 @@
 import React from 'react';
 import { Text, View, Image, TouchableOpacity } from 'react-native';
-import { database } from '../config/config';
+import { database } from '../../config/config';
 import PhotoList from '../Components/PhotoList';
 
 const UserProfile = ({ route, navigation }) => {
@@ -11,13 +11,13 @@ const UserProfile = ({ route, navigation }) => {
     const [userName, setUserName] = React.useState(null);
 
     React.useEffect(() => {
-       checkParams();
+        checkParams();
     }, [])
 
     const checkParams = () => {
         let params = route.params;
-        if(params) {
-            if(params.userId) {
+        if (params) {
+            if (params.userId) {
                 fetchUserInfo(params.userId);
                 setUserId(params.userId);
             }
@@ -26,19 +26,19 @@ const UserProfile = ({ route, navigation }) => {
 
     const fetchUserInfo = (userId) => {
 
-        database.ref('users').child(userId).child('username').once('value').then(function(snapshot) {
+        database.ref('users').child(userId).child('username').once('value').then(function (snapshot) {
             let exists = (snapshot !== null)
-            if(exists) data = snapshot.val();
+            if (exists) data = snapshot.val();
             setUserName(data);
         }).catch((error) => console.log(error));
-        database.ref('users').child(userId).child('name').once('value').then(function(snapshot) {
+        database.ref('users').child(userId).child('name').once('value').then(function (snapshot) {
             let exists = (snapshot !== null)
-            if(exists) data = snapshot.val();
+            if (exists) data = snapshot.val();
             setName(data);
         }).catch((error) => console.log(error));
-        database.ref('users').child(userId).child('avatar').once('value').then(function(snapshot) {
+        database.ref('users').child(userId).child('avatar').once('value').then(function (snapshot) {
             let exists = (snapshot !== null)
-            if(exists) data = snapshot.val();
+            if (exists) data = snapshot.val();
             setAvatar(data);
             setLoaded(true);
         }).catch((error) => console.log(error));
@@ -48,16 +48,17 @@ const UserProfile = ({ route, navigation }) => {
         <View style={{ flex: 1 }}>
             {isLoaded === true ? (
                 <View style={{ flex: 1 }}>
-                    <View style={{ flexDirection: 'row', 
+                    <View style={{
+                        flexDirection: 'row',
                         height: 70, paddingTop: 30, backgroundColor: 'white',
                         borderColor: 'lightgrey', borderBottomWidth: 0.5, justifyContent: 'space-between',
                         alignItems: 'center'
                     }}>
-                        <TouchableOpacity onPress={() => navigation.goBack()} style={{width: 100}}>
-                            <Text style={{paddingLeft: 10, fontSize: 12, fontWeight: 'bold'}}>Go Back</Text>
+                        <TouchableOpacity onPress={() => navigation.goBack()} style={{ width: 100 }}>
+                            <Text style={{ paddingLeft: 10, fontSize: 12, fontWeight: 'bold' }}>Go Back</Text>
                         </TouchableOpacity>
                         <Text>Profile</Text>
-                        <Text style={{width: 100}}></Text>
+                        <Text style={{ width: 100 }}></Text>
                     </View>
 
                     <View style={{ justifyContent: "space-evenly", alignItems: "center", flexDirection: "row", paddingVertical: 10 }}>
@@ -68,7 +69,7 @@ const UserProfile = ({ route, navigation }) => {
                         </View>
                     </View>
 
-                    <PhotoList isUser={true} userId={userId} navigation={navigation}/>
+                    <PhotoList isUser={true} userId={userId} navigation={navigation} />
 
                 </View>
             ) : (
