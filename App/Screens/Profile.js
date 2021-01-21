@@ -1,6 +1,6 @@
 import React from 'react';
 import { Text, View, Image, TouchableOpacity, TextInput } from 'react-native';
-import { f, auth, database } from '../config/config';
+import { f, auth, database } from '../../config/config';
 import PhotoList from '../Components/PhotoList';
 import UserAuth from '../Components/UserAuth';
 

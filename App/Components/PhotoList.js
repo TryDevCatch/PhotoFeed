@@ -1,6 +1,6 @@
 import React from 'react';
 import { FlatList, Text, View, Image, TouchableOpacity } from 'react-native';
-import { database } from '../config/config';
+import { database } from '../../config/config';
 import { timeConverter } from '../Utils/TimeUtils';
 
 const PhotoList = (props) => {
@@ -92,7 +92,7 @@ const PhotoList = (props) => {
                                 </View>
                                 <View>
                                     <Image
-                                        source={{ uri: item.url }}//'https://source.unsplash.com/random/500' + Math.floor((Math.random() * 800) + 500) }}
+                                        source={{ uri: item.url }}
                                         style={{ resizeMode: 'cover', width: '100%', height: 275 }}
                                     />
                                 </View>

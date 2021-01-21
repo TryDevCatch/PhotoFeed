@@ -1,6 +1,6 @@
 import React from 'react';
 import { TextInput, ActivityIndicator, Text, View, Image, TouchableOpacity } from 'react-native';
-import { f, auth, database, storage } from '../config/config';
+import { f, auth, database, storage } from '../../config/config';
 import * as ImagePicker from 'expo-image-picker';
 import * as Permissions from 'expo-permissions';
 import UserAuth from '../Components/UserAuth';

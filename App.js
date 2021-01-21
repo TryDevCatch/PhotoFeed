@@ -3,11 +3,11 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import Feed from './Screens/Feed';
-import Upload from './Screens/Upload';
-import Profile from './Screens/Profile';
-import Comment from './Screens/Comment';
-import UserProfile from './Screens/UserProfile'
+import Feed from './App/Screens/Feed';
+import Upload from './App/Screens/Upload';
+import Profile from './App/Screens/Profile';
+import Comment from './App/Screens/Comment';
+import UserProfile from './App/Screens/UserProfile'
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
